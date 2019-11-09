@@ -15,11 +15,10 @@ import org.apache.commons.csv.CSVRecord;
 
 public class ReadMeal {
     public static Meal[] parse() throws Exception {
-        String fileDirectory = "C:/Users/Pi-Ching/eclipse-workspace/WhateverJava/data";
         String fileName = "fulldata.csv";
         String[] header = {"Restaurant","Item","Price","Photo"};
 
-        Reader reader = Files.newBufferedReader(Paths.get(fileDirectory + "/" + fileName));
+        Reader reader = Files.newBufferedReader(Paths.get(ClassLoader.getSystemResource(fileName).toURI()));
         CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withHeader());
         List<CSVRecord> records = csvParser.getRecords();
         List<Meal> meals = new ArrayList<ReadMeal.Meal>();

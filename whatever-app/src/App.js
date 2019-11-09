@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import ProTip from './ProTip';
+import {makeDataRequest} from "./core/request";
 
 function Copyright() {
   return (
@@ -19,6 +20,12 @@ function Copyright() {
 }
 
 export default function App() {
+    useEffect(() => {
+        makeDataRequest(data => {
+            console.log(data);
+        });
+    }, []);
+
   return (
     <Container maxWidth="sm">
       <Box my={4}>
