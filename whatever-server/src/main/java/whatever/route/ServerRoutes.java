@@ -51,7 +51,11 @@ public class ServerRoutes extends AllDirectives {
                         getAck(message)
                       )
                     )
-                ))
+                )
+            ),
+            path("csv", () ->
+                concat(getCsv())
+            )
         );
     }
     //#all-routes
@@ -66,6 +70,18 @@ public class ServerRoutes extends AllDirectives {
         return concat(
             get(() -> complete("Hello "+ message))
         );
+    }
+
+    private Route getCsv() {
+        return get(() -> {
+            try {
+                ReadMeal.Meal[] meals = ReadMeal.parse();
+                return complete(StatusCodes.OK, meals, Jackson.marshaller());
+            } catch (Exception e) {
+                LOG.error("", e);
+                return complete(StatusCodes.NOT_FOUND);
+            }
+        });
     }
 
     @SuppressWarnings("all")
