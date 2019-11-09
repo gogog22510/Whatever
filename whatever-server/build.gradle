@@ -24,6 +24,7 @@ dependencies {
     implementation "org.slf4j:slf4j-log4j12:${slf4jVersion}"
     implementation "mysql:mysql-connector-java:${mysqlVersion}"
     implementation "com.google.guava:guava:${guavaVersion}"
+    implementation "org.apache.commons:commons-csv:${commonCsvVersion}"
 
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
 }
