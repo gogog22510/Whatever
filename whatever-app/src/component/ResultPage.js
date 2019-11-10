@@ -7,12 +7,8 @@ import Container from "@material-ui/core/Container";
 import {useHistory} from "react-router-dom";
 import {connect} from "react-redux";
 import {RESULT_DECISION} from "../core/constant";
-import princeImage from "../image/prince.png";
-import princessImage from "../image/princess.png";
-import blindJohnImage from "../image/blindJohn.jpg";
-import modelMaleImage from "../image/modelMale.jpg";
-import modelFemaleImage from "../image/modelFemale.jpeg";
-import modelLGBTQImage from "../image/modelLGBTQ.jpg";
+import rejectBtnImage from "../image/reject.jpg";
+import acceptBtnImage from "../image/accept.jpg";
 
 const useStyles = makeStyles(theme => ({
     '@global': {
@@ -68,14 +64,14 @@ function ResultPage(props) {
     const prevCount = decision;
 
     const navigationToWhateverPage = (acceptOrNot) => () => {
-        const count = prevCount + acceptOrNot;
+        const score = acceptOrNot ? -0.5 : 1;
+        const count = prevCount + score;
         dispatchDecisionResult({
             decision: count
         });
-        if (acceptOrNot === -0.2) {
+        if (acceptOrNot) {
             alert("我就隨便我驕傲");
-        }
-        if (acceptOrNot === 1) {
+        } else {
             alert("我就難搞我最瞎");
         }
         history.push("/");
@@ -95,10 +91,10 @@ function ResultPage(props) {
                     </Typography>
                 </div>
                 <div className={classes.paper}>
-                    <img src={""} alt="accept!" width={200} height={300}
-                         onClick={navigationToWhateverPage(-0.5)}/>
-                    <img src={""} alt="reject!" width={200} height={300}
-                         onClick={navigationToWhateverPage(1)}/>
+                    <img src={acceptBtnImage} alt="accept!" width={100} height={100}
+                         onClick={navigationToWhateverPage(true)}/>
+                    <img src={rejectBtnImage} alt="reject!" width={100} height={100}
+                         onClick={navigationToWhateverPage(false)}/>
                 </div>
             </div>
         </Container>
