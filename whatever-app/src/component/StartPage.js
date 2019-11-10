@@ -1,31 +1,23 @@
-import React, {useState} from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+import React from 'react';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles';
 import Container from "@material-ui/core/Container";
 import {useHistory} from "react-router-dom";
 import {connect} from "react-redux";
-import {LOGIN_SUCCESS} from "../core/constant";
-import modelMaleImage from "../image/modelMale.jpg";
-import modelFemaleImage from "../image/modelFemale.jpeg";
-import modelLGBTQImage from "../image/modelLGBTQ.jpg";
+import {CHOOSE_GENDER} from "../core/constant";
 import princeImage from "../image/prince.png";
 import princessImage from "../image/princess.png";
 import blindJohnImage from "../image/blindJohn.jpg";
+import "./StartPage.css";
 
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
             <Link color="inherit" href="https://material-ui.com/">
-                Your Website
+                Whatever Team
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -61,7 +53,7 @@ const useStyles = makeStyles(theme => ({
     },
     imgSpace: {
         marginRight: theme.spacing(10),
-    }
+    },
 }));
 
 const mapStateToProps = (state, ownProps) => {
@@ -72,22 +64,21 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        dispatchLoginSuccess: data => dispatch({
-            type: LOGIN_SUCCESS,
+        dispatchChooseGenderSuccess: data => dispatch({
+            type: CHOOSE_GENDER,
             data: data
         }),
     }
 };
 
 function StartPage(props) {
-    const {dispatchLoginSuccess} = props;
+    const {dispatchChooseGenderSuccess} = props;
     const classes = useStyles();
     const history = useHistory();
-    const [state, setState] = React.useState(0);
 
-    const navigationToMain = () => {
-        dispatchLoginSuccess({
-            userType: 1
+    const navigationToWhateverPage = (gender) => () => {
+        dispatchChooseGenderSuccess({
+           genderType: gender
         });
         history.push("/");
     };
@@ -96,22 +87,13 @@ function StartPage(props) {
         <Container component="main" maxWidth="xs">
             <div className={classes.paper}>
                 <div className={classes.abc}>
-                    <img className={classes.imgSpace} src={princeImage} alt="hello!" width={200} height={300} />
-                    <img className={classes.imgSpace} src={princessImage} alt="hello!" width={200} height={300} />
-                    <img src={blindJohnImage} alt="hello!" width={200} height={300} />
+                    <img className={classes.imgSpace} src={princessImage} alt="hello!" width={200} height={300}
+                         onClick={navigationToWhateverPage(1)}/>
+                    <img className={classes.imgSpace} src={blindJohnImage} alt="hello!" width={200} height={300}
+                         onClick={navigationToWhateverPage(2)}/>
+                    <img src={princeImage} alt="hello!" width={200} height={300}
+                         onClick={navigationToWhateverPage(3)}/>
                 </div>
-                <form className={classes.form} noValidate>
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        color="primary"
-                        className={classes.submit}
-                        onClick={navigationToMain}
-                    >
-                        Sign In
-                    </Button>
-                </form>
             </div>
             <Box mt={8}>
                 <Copyright />
