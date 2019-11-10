@@ -15,6 +15,7 @@ import whateverLogo from "../image/whateverLogo.png";
 import ProgressBar from "./ProgressBar";
 import {Typography} from "@material-ui/core";
 import blindFunction from "../core/blindFunction";
+import {isEmpty} from "../core/api";
 
 const useStyles = makeStyles(theme => ({
     '@global': {
@@ -107,15 +108,17 @@ function MainPage(props) {
     };
 
     useEffect(() => {
+        console.log(`count = ${decision}`);
         if (!genderType) {
             history.push("/start");
         }
         else {
-            console.log(genderType);
-            makeDataRequest(data => {
-                console.log(data);
-                dispatchLoadDataSuccess(data);
-            });
+            if (isEmpty(data)) {
+                makeDataRequest(data => {
+                    console.log(data);
+                    dispatchLoadDataSuccess(data);
+                });
+            }
         }
     }, []);
 
