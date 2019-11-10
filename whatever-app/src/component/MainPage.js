@@ -122,7 +122,7 @@ function MainPage(props) {
         const selected = randomMenu(data);
         console.log(selected);
         dispatchRandomMenu(selected);
-        history.push("/choose");
+        history.push("/result");
     };
 
     return (

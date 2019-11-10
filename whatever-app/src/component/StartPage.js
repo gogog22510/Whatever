@@ -40,6 +40,9 @@ const useStyles = makeStyles(theme => ({
     },
     imgSpace: {
         marginRight: theme.spacing(10),
+        "&:hover": {
+            cursor: "pointer"
+        }
     },
 }));
 
@@ -78,7 +81,7 @@ function StartPage(props) {
                          onClick={navigationToWhateverPage(1)}/>
                     <img className={classes.imgSpace} src={blindJohnImage} alt="hello!" width={200} height={300}
                          onClick={navigationToWhateverPage(2)}/>
-                    <img src={princeImage} alt="hello!" width={200} height={300}
+                    <img className={classes.imgSpace} src={princeImage} alt="hello!" width={200} height={300}
                          onClick={navigationToWhateverPage(3)}/>
                 </div>
             </div>
