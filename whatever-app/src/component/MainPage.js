@@ -14,6 +14,7 @@ import modelMaleImage from "../image/modelMale.jpg";
 import whateverLogo from "../image/whateverLogo.png";
 import ProgressBar from "./ProgressBar";
 import {Typography} from "@material-ui/core";
+import blindFunction from "../core/blindFunction";
 
 const useStyles = makeStyles(theme => ({
     '@global': {
@@ -97,7 +98,7 @@ function MainPage(props) {
     const classes = useStyles();
     const history = useHistory();
     const {common, dispatchLoadDataSuccess, dispatchRandomMenu} = props;
-    const {data, genderType} = common;
+    const {data, genderType, decision} = common;
 
     const verticalHorizontal = {
         display: 'flex',
@@ -132,7 +133,7 @@ function MainPage(props) {
                     <img className={classes.imgSpace} src={modelImage[genderType-1]} alt="model" width={200} height={300} />
                     <div style={verticalHorizontal}>
                         <Typography>Blind Point</Typography>
-                        <ProgressBar percentage={30} />
+                        <ProgressBar percentage={blindFunction(decision)} />
                     </div>
                     <img className={classes.imgSpace} src={genderImage[genderType-1]} alt="gender" width={200} height={300} />
                 </div>
