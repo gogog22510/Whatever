@@ -3,7 +3,7 @@ const initialState = {
     genderType: null,
     data: [],
     menu: null,
-    decision: 0,
+    decision: 1,
 };
 
 export default function common(state = initialState, action) {
