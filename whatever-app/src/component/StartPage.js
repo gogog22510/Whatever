@@ -12,19 +12,6 @@ import princessImage from "../image/princess.png";
 import blindJohnImage from "../image/blindJohn.jpg";
 import "./StartPage.css";
 
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://material-ui.com/">
-                Whatever Team
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
-
 const useStyles = makeStyles(theme => ({
     '@global': {
         body: {
@@ -95,9 +82,6 @@ function StartPage(props) {
                          onClick={navigationToWhateverPage(3)}/>
                 </div>
             </div>
-            <Box mt={8}>
-                <Copyright />
-            </Box>
         </Container>
     );
 }

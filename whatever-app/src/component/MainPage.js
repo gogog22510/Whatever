@@ -56,7 +56,10 @@ const useStyles = makeStyles(theme => ({
 
 const randomMenu = data => {
     // return the data
-    return data[0];
+    const min = 0;
+    const max = data.length;
+    const rand = Math.floor(min + Math.random() * (max - min));
+    return data[rand];
 };
 
 const genderImage = [
