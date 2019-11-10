@@ -3,7 +3,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import Container from "@material-ui/core/Container";
 import {useHistory} from "react-router-dom";
 import {connect} from "react-redux";
-import {LOAD_DATA_SUCCESS, RANDOM_MENU} from "../core/constant";
+import {LOAD_DATA_SUCCESS, RANDOM_MENU, RESULT_DECISION} from "../core/constant";
 import {makeDataRequest} from "../core/request";
 import princeImage from "../image/prince.png";
 import princessImage from "../image/princess.png";
@@ -12,6 +12,7 @@ import modelFemaleImage from "../image/modelFemale.jpeg";
 import modelLGBTQImage from "../image/modelLGBTQ.jpg";
 import modelMaleImage from "../image/modelMale.jpg";
 import whateverLogo from "../image/whateverLogo.png";
+import loadingGif from "../image/loading.gif";
 import ProgressBar from "./ProgressBar";
 import {Typography} from "@material-ui/core";
 import blindFunction from "../core/blindFunction";
@@ -92,14 +93,19 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             type: RANDOM_MENU,
             data: data
         }),
+        dispatchDecisionResult: data => dispatch({
+            type: RESULT_DECISION,
+            data: data
+        }),
     }
 };
 
 function MainPage(props) {
     const classes = useStyles();
     const history = useHistory();
-    const {common, dispatchLoadDataSuccess, dispatchRandomMenu} = props;
+    const {common, dispatchLoadDataSuccess, dispatchRandomMenu, dispatchDecisionResult} = props;
     const {data, genderType, decision} = common;
+    const [loading, setLoading] = React.useState(false);
 
     const verticalHorizontal = {
         display: 'flex',
@@ -120,13 +126,31 @@ function MainPage(props) {
                 });
             }
         }
+
+        // alert model state
+        const blindPoint = calculateBlindPoint();
+        if (blindPoint <= 0) {
+            dispatchDecisionResult({
+                decision: 1
+            });
+            alert("我最隨便");
+        }
+        else if (blindPoint >= 100) {
+            dispatchDecisionResult({
+                decision: 1
+            });
+            alert("我最瞎");
+        }
     }, []);
 
     const handleRandom = evt => {
         const selected = randomMenu(data);
         console.log(selected);
         dispatchRandomMenu(selected);
-        history.push("/result");
+        setLoading(true);
+        setTimeout(() => {
+            history.push("/result");
+        }, 500);
     };
 
     const calculateBlindPoint = () => {
@@ -147,7 +171,8 @@ function MainPage(props) {
                     <img className={classes.imgSpace} src={genderImage[genderType-1]} alt="gender" width={200} height={300} />
                 </div>
                 <div style={verticalHorizontal}>
-                    <img className={classes.whateverButton} src={whateverLogo} alt="whatever" width={150} height={150} onClick={handleRandom}/>
+                    {!loading && <img className={classes.whateverButton} src={whateverLogo} alt="whatever" width={150} height={150} onClick={handleRandom}/>}
+                    {loading && <img className={classes.whateverButton} src={loadingGif} alt="loading" width={200} height={150}/>}
                 </div>
             </div>
         </Container>
