@@ -10,6 +10,7 @@ import AppBar from "@material-ui/core/AppBar";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Toolbar from "@material-ui/core/Toolbar";
 import ResultPage from "./component/ResultPage";
+import {Helmet} from "react-helmet";
 
 function Copyright() {
     return (
@@ -41,6 +42,9 @@ export default function App(props) {
 
       return (
         <main>
+            <Helmet>
+                <title>Whatever App</title>
+            </Helmet>
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
