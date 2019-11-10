@@ -17,6 +17,11 @@ import ProgressBar from "./ProgressBar";
 import {Typography} from "@material-ui/core";
 import blindFunction from "../core/blindFunction";
 import {isEmpty} from "../core/api";
+import Dialog from "@material-ui/core/Dialog";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import List from "@material-ui/core/List";
+import blindImage from "../image/blind.jpg";
+import notBlindImage from "../image/good.gif";
 
 const useStyles = makeStyles(theme => ({
     '@global': {
@@ -99,6 +104,22 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         }),
     }
 };
+function SimpleDialog(props) {
+    const {open, blindOrNot, handleClose} = props;
+    const handleShowImage = (blindOrNot) => {
+        if(blindOrNot){
+            return <img src={blindImage} alt="瞎!" width={300} height={300}/>
+        } else {
+            return <img src={notBlindImage} alt="隨便!" width={400} height={400}/>
+        }
+    };
+    return (
+        <Dialog aria-labelledby="simple-dialog-title" open={open} onClose={handleClose}>
+            <DialogTitle id="simple-dialog-title">{blindOrNot ? "我最瞎" : "我最隨便"}</DialogTitle>
+            {handleShowImage(blindOrNot)}
+        </Dialog>
+    );
+}
 
 function MainPage(props) {
     const classes = useStyles();
@@ -107,11 +128,13 @@ function MainPage(props) {
     const {data, genderType, decision} = common;
     const [loading, setLoading] = React.useState(false);
 
+    const [openDialog, setOpenDialog] = React.useState(false);
+    const [blindOrNot, setBlindOrNot] = React.useState(false);
+
     const verticalHorizontal = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        textAlign: 'center',
     };
 
     useEffect(() => {
@@ -134,13 +157,17 @@ function MainPage(props) {
             dispatchDecisionResult({
                 decision: 1
             });
-            alert("我最隨便");
+            //alert("我最隨便");
+            setBlindOrNot(false);
+            setOpenDialog(true);
         }
         else if (blindPoint >= 100) {
             dispatchDecisionResult({
                 decision: 1
             });
-            alert("我最瞎");
+            //alert("我最瞎");
+            setBlindOrNot(true);
+            setOpenDialog(true);
         }
     }, []);
 
@@ -162,6 +189,7 @@ function MainPage(props) {
 
     return (
         <Container component="main" maxWidth="xs">
+            <SimpleDialog blindOrNot={blindOrNot} open={openDialog} handleClose={evt => setOpenDialog(false)} />
             <div className={classes.paper}>
                 <div className={classes.topBar}>
                     <img className={classes.imgSpace} src={modelImage[genderType-1]} alt="model" width={200} height={300} />
