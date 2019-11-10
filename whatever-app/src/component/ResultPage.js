@@ -96,7 +96,7 @@ function ResultPage(props) {
                 </div>
                 <div className={classes.paper}>
                     <img src={""} alt="accept!" width={200} height={300}
-                         onClick={navigationToWhateverPage(-0.2)}/>
+                         onClick={navigationToWhateverPage(-0.5)}/>
                     <img src={""} alt="reject!" width={200} height={300}
                          onClick={navigationToWhateverPage(1)}/>
                 </div>
