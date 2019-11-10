@@ -81,13 +81,13 @@ function ResultPage(props) {
         <Container component="main" maxWidth="xs">
             <div className={classes.horizontalSplit}>
                 <div className={classes.paper}>
-                    <img className={classes.imgSpace} src="https://s3-media3.fl.yelpcdn.com/bphoto/K1m1-dXn6rA9MLFuraajyQ/258s.jpg"
+                    <img className={classes.imgSpace} src={menu.photourl}
                          alt="mealPhoto" width={200} height={300}/>
                     <Typography component="h1" variant="h5">
-                        Restaurant
+                        {menu.restaurant}
                     </Typography>
                     <Typography component="h1" variant="h5">
-                        Food
+                        {menu.item}
                     </Typography>
                 </div>
                 <div className={classes.paper}>
