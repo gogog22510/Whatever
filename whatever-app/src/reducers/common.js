@@ -1,8 +1,9 @@
-import {LOAD_DATA_SUCCESS, CHOOSE_GENDER, RANDOM_MENU} from "../core/constant"
+import {LOAD_DATA_SUCCESS, CHOOSE_GENDER, RANDOM_MENU, RESULT_DECISION} from "../core/constant"
 const initialState = {
     genderType: null,
     data: [],
     menu: null,
+    decision: 0,
 };
 
 export default function common(state = initialState, action) {
@@ -18,6 +19,10 @@ export default function common(state = initialState, action) {
         case RANDOM_MENU:
             return Object.assign({}, state, {
                 menu: action.data,
+            });
+        case RESULT_DECISION:
+            return Object.assign({}, state, {
+                decision: action.data.decision,
             });
         default:
             return state
