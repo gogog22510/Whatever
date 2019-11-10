@@ -62,12 +62,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 function ResultPage(props) {
     const {dispatchDecisionResult, common} = props;
-    const {decision} = common;
+    const {decision, menu} = common;
     const classes = useStyles();
     const history = useHistory();
     const prevCount = decision;
 
-    const navigationToWhateverPage = (acceptOrNot) => {
+    const navigationToWhateverPage = (acceptOrNot) => () => {
         const count = prevCount + acceptOrNot;
         dispatchDecisionResult({
             decision: count
@@ -79,7 +79,8 @@ function ResultPage(props) {
         <Container component="main" maxWidth="xs">
             <div className={classes.horizontalSplit}>
                 <div className={classes.paper}>
-                    <img className={classes.imgSpace} src={princessImage} alt="mealPhoto" width={200} height={300}/>
+                    <img className={classes.imgSpace} src="https://s3-media3.fl.yelpcdn.com/bphoto/K1m1-dXn6rA9MLFuraajyQ/258s.jpg"
+                         alt="mealPhoto" width={200} height={300}/>
                     <Typography component="h1" variant="h5">
                         Restaurant
                     </Typography>
@@ -88,9 +89,9 @@ function ResultPage(props) {
                     </Typography>
                 </div>
                 <div className={classes.paper}>
-                    <img src={acceptImage} alt="accept!" width={200} height={300}
+                    <img src={""} alt="accept!" width={200} height={300}
                          onClick={navigationToWhateverPage(-0.2)}/>
-                    <img src={rejectImage} alt="reject!" width={200} height={300}
+                    <img src={""} alt="reject!" width={200} height={300}
                          onClick={navigationToWhateverPage(1)}/>
                 </div>
             </div>
