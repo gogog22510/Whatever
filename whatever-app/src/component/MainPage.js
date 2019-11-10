@@ -129,6 +129,12 @@ function MainPage(props) {
         history.push("/result");
     };
 
+    const calculateBlindPoint = () => {
+        const point = blindFunction(decision);
+        console.log(`point = ${point}`);
+        return point;
+    };
+
     return (
         <Container component="main" maxWidth="xs">
             <div className={classes.paper}>
@@ -136,7 +142,7 @@ function MainPage(props) {
                     <img className={classes.imgSpace} src={modelImage[genderType-1]} alt="model" width={200} height={300} />
                     <div style={verticalHorizontal}>
                         <Typography>Blind Point</Typography>
-                        <ProgressBar percentage={blindFunction(decision)} />
+                        <ProgressBar percentage={calculateBlindPoint()} />
                     </div>
                     <img className={classes.imgSpace} src={genderImage[genderType-1]} alt="gender" width={200} height={300} />
                 </div>

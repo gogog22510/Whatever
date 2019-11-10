@@ -1,6 +1,4 @@
-import React from 'react';
-import Link from '@material-ui/core/Link';
-import Box from '@material-ui/core/Box';
+import React, {useEffect} from 'react';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles';
 import Container from "@material-ui/core/Container";
@@ -9,6 +7,8 @@ import {connect} from "react-redux";
 import {RESULT_DECISION} from "../core/constant";
 import rejectBtnImage from "../image/reject.jpg";
 import acceptBtnImage from "../image/accept.jpg";
+import {isEmpty} from "../core/api";
+import {makeDataRequest} from "../core/request";
 
 const useStyles = makeStyles(theme => ({
     '@global': {
@@ -39,6 +39,11 @@ const useStyles = makeStyles(theme => ({
     imgSpace: {
         marginRight: theme.spacing(10),
     },
+    imgPointer: {
+        "&:hover": {
+            cursor: "pointer"
+        },
+    },
 }));
 
 const mapStateToProps = (state, ownProps) => {
@@ -63,6 +68,12 @@ function ResultPage(props) {
     const history = useHistory();
     const prevCount = decision;
 
+    useEffect(() => {
+        if (!menu) {
+            history.push("/");
+        }
+    }, []);
+
     const navigationToWhateverPage = (acceptOrNot) => () => {
         const score = acceptOrNot ? -0.5 : 1;
         const count = prevCount + score;
@@ -81,19 +92,19 @@ function ResultPage(props) {
         <Container component="main" maxWidth="xs">
             <div className={classes.horizontalSplit}>
                 <div className={classes.paper}>
-                    <img className={classes.imgSpace} src={menu.photourl}
+                    <img className={classes.imgSpace} src={menu && menu.photourl}
                          alt="mealPhoto" width={200} height={300}/>
                     <Typography component="h1" variant="h5">
-                        {menu.restaurant}
+                        {menu && menu.restaurant}
                     </Typography>
                     <Typography component="h1" variant="h5">
-                        {menu.item}
+                        {menu && menu.item}
                     </Typography>
                 </div>
                 <div className={classes.paper}>
-                    <img src={acceptBtnImage} alt="accept!" width={100} height={100}
+                    <img className={classes.imgPointer} src={acceptBtnImage} alt="accept!" width={100} height={100}
                          onClick={navigationToWhateverPage(true)}/>
-                    <img src={rejectBtnImage} alt="reject!" width={100} height={100}
+                    <img className={classes.imgPointer} src={rejectBtnImage} alt="reject!" width={100} height={100}
                          onClick={navigationToWhateverPage(false)}/>
                 </div>
             </div>
