@@ -25,7 +25,8 @@ export default function App(props) {
     <main>
         <Switch>
             <Route path="/" exact component={() => <MainPage cookies={props.cookies} />} />
-            <Route path="/login" component={() => <StartPage cookies={props.cookies} />} />
+            <Route path="/start" component={() => <StartPage cookies={props.cookies} />} />
+            <Route path="/choose" component={() => <Sample cookies={props.cookies} />} />
             <Route path="/" component={Sample} />
         </Switch>
         <Box mt={8}>

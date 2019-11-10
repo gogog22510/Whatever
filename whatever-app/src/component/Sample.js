@@ -1,24 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Link from '@material-ui/core/Link';
 import {connect} from "react-redux";
-import {makeDataRequest} from "../core/request";
-import {LOAD_DATA_SUCCESS} from "../core/constant";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -28,23 +12,10 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        dispatchLoadDataSuccess: data => dispatch({
-            type: LOAD_DATA_SUCCESS,
-            data: data
-        }),
     }
 };
 
 function Sample(props) {
-    const {dispatchLoadDataSuccess} = props;
-
-    useEffect(() => {
-        // Do something
-        makeDataRequest(data => {
-            console.log(data);
-            dispatchLoadDataSuccess(data);
-        });
-    }, []);
 
   return (
     <Container maxWidth="sm">
@@ -52,7 +23,6 @@ function Sample(props) {
         <Typography variant="h4" component="h1" gutterBottom>
           Create React App v4-beta example
         </Typography>
-        <Copyright />
       </Box>
     </Container>
   );

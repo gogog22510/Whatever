@@ -1,7 +1,7 @@
 // Speed up calls to hasOwnProperty
-var hasOwnProperty = Object.prototype.hasOwnProperty;
+const hasOwnProperty = Object.prototype.hasOwnProperty;
 
-function isEmpty(obj) {
+export function isEmpty(obj) {
 
     // null and undefined are "empty"
     if (obj == null) return true;
