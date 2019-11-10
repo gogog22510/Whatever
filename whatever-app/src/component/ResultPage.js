@@ -72,6 +72,12 @@ function ResultPage(props) {
         dispatchDecisionResult({
             decision: count
         });
+        if (acceptOrNot === -0.2) {
+            alert("我就隨便我驕傲");
+        }
+        if (acceptOrNot === 1) {
+            alert("我就難搞我最瞎");
+        }
         history.push("/");
     };
 
