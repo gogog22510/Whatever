@@ -12,7 +12,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import Container from "@material-ui/core/Container";
 import {useHistory} from "react-router-dom";
 import {connect} from "react-redux";
-import {LOGIN_SUCCESS} from "../core/constant";
+import {CHOOSE_GENDER} from "../core/constant";
 
 function Copyright() {
     return (
@@ -61,7 +61,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         dispatchLoginSuccess: data => dispatch({
-            type: LOGIN_SUCCESS,
+            type: CHOOSE_GENDER,
             data: data
         }),
     }

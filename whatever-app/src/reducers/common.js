@@ -1,14 +1,14 @@
-import {LOAD_DATA_SUCCESS, LOGIN_SUCCESS} from "../core/constant"
+import {LOAD_DATA_SUCCESS, CHOOSE_GENDER} from "../core/constant"
 const initialState = {
-    user: null,
+    genderType: null,
     data: [],
 };
 
 export default function common(state = initialState, action) {
     switch (action.type) {
-        case LOGIN_SUCCESS:
+        case CHOOSE_GENDER:
             return Object.assign({}, state, {
-                user: action.data,
+                genderType: action.data.genderType,
             });
         case LOAD_DATA_SUCCESS:
             return Object.assign({}, state, {
