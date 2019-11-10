@@ -111,6 +111,7 @@ function MainPage(props) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        textAlign: 'center',
     };
 
     useEffect(() => {
