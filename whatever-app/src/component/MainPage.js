@@ -201,7 +201,7 @@ function MainPage(props) {
                 </div>
                 <div style={verticalHorizontal}>
                     {!loading && <img className={classes.whateverButton} src={whateverLogo} alt="whatever" width={150} height={150} onClick={handleRandom}/>}
-                    {loading && <img className={classes.whateverButton} src={loadingGif} alt="loading" width={200} height={150}/>}
+                    {loading && <img className={classes.whateverButton} src={loadingGif} alt="loading" width={250} height={150}/>}
                 </div>
             </div>
         </Container>
