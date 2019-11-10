@@ -150,7 +150,7 @@ function MainPage(props) {
         setLoading(true);
         setTimeout(() => {
             history.push("/result");
-        }, 1000);
+        }, 500);
     };
 
     const calculateBlindPoint = () => {
