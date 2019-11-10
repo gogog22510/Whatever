@@ -1,4 +1,16 @@
 Restaurant,Item,Price,Photo
+Junior's Restaurant & Bakery - 45th St.,Matzon Ball Soup,8.99,https://s3-media3.fl.yelpcdn.com/bphoto/aYS454HoEpFP3Aiz4Zu9ug/258s.jpg
+Junior's Restaurant & Bakery - 45th St.,Reuben,27,https://s3-media2.fl.yelpcdn.com/bphoto/W2KzVRNsSSBEknz5fR8H_g/258s.jpg
+Junior's Restaurant & Bakery - 45th St.,Cheeseburger With fries,27,https://s3-media2.fl.yelpcdn.com/bphoto/jbXmR3OqWivUGZkBsDQrzw/258s.jpg
+Junior's Restaurant & Bakery - 45th St.,"Fried Chicken
+Southern style, vegetable and mashed potato",27,https://s3-media2.fl.yelpcdn.com/bphoto/IywJp-BiQEw_A-Z9z36F8A/258s.jpg
+Junior's Restaurant & Bakery - 45th St.,Classic Eggs Benedict,16.75,https://s3-media2.fl.yelpcdn.com/bphoto/D7jnlwRhwueQFt3VUW_Khw/258s.jpg
+Carmine's Italian Restaurant - Times Square,meatballs,33.95,https://s3-media4.fl.yelpcdn.com/bphoto/djRgyvyc8pWM4orwB_dfLw/258s.jpg
+Carmine's Italian Restaurant - Times Square,dried caramari,35.95,https://s3-media2.fl.yelpcdn.com/bphoto/VBmmI08mpH9NWKSN5I94lA/258s.jpg
+Carmine's Italian Restaurant - Times Square,ceasar salad,27.95,https://s3-media3.fl.yelpcdn.com/bphoto/nF9AuralumU96sV8gDBUSA/258s.jpg
+Carmine's Italian Restaurant - Times Square,lasagna,32.95,https://s3-media2.fl.yelpcdn.com/bphoto/Iky99f5gAXACQFT2nmvQJw/258s.jpg
+Rahi,penne alla vodka,34.95,https://s3-media2.fl.yelpcdn.com/bphoto/vIiQvZhdrHF6orNUrcORTQ/258s.jpg
+Carmine's Italian Restaurant - Times Square,shrimp scampi,39.95,https://s3-media4.fl.yelpcdn.com/bphoto/yIpMxxKw3pMfH6RkyWZmJQ/258s.jpg
 Rahi,banana leaf chicken,23,https://s3-media3.fl.yelpcdn.com/bphoto/K1m1-dXn6rA9MLFuraajyQ/258s.jpg
 Rahi,edamame artichoke chaat,9,https://s3-media1.fl.yelpcdn.com/bphoto/ogiOicJLdaycBzZIatOSOg/o.jpg
 Rahi,Lasooni chicken Tikka,9,https://s3-media3.fl.yelpcdn.com/bphoto/Y0J424tGVJ2iHFShRJyj-w/258s.jpg
@@ -12,3 +24,38 @@ Queen of Sheba,Yebeg Wot entree,20,https://s3-media1.fl.yelpcdn.com/bphoto/39v61
 Tuscany Steakhouse,veal parm,40,https://s3-media4.fl.yelpcdn.com/bphoto/-90tDPLflSTFUWDVZ0H-cw/258s.jpg
 Tuscany Steakhouse,Filet mignon,45,https://s3-media4.fl.yelpcdn.com/bphoto/2KfQSrhEOODvVGgzbT5uGA/258s.jpg
 Tuscany Steakhouse,seafood tower,45,https://s3-media4.fl.yelpcdn.com/bphoto/4I_MCai25_TOy9RkUaT3TQ/258s.jpg
+Zest Szechuan,Dan Dan noodles,8.95,https://s3-media1.fl.yelpcdn.com/bphoto/3rRNBi8QcOaW0PiL3JASkA/258s.jpg
+Zest Szechuan,Chong Qing Grilled fish,38.95,https://s3-media3.fl.yelpcdn.com/bphoto/nOex53ia6vF-PPaEtbLZyA/258s.jpg
+Zest Szechuan,Beef Tendon & Tripe with peanuts & chilli,12.95,https://s3-media4.fl.yelpcdn.com/bphoto/oYRICUzDj7siS_RzpKoG4g/258s.jpg
+Zest Szechuan,Mapo Tofu with Minced Pork,13.95,https://s3-media1.fl.yelpcdn.com/bphoto/358uyFx7k06WcHAun10Ctg/258s.jpg
+Zest Szechuan,Chong Qing Spicy Diced chicken,21.95,https://s3-media2.fl.yelpcdn.com/bphoto/mrFnvqwvvnL6JqMuI3Ppqg/258s.jpg
+Zest Szechuan,Spicy pot with lotus Root Veg shrimp sausage potatoes and chicken,28.95,https://s3-media1.fl.yelpcdn.com/bphoto/lZcnAcQMUXR7TaYbsnt5wA/o.jpg
+Sathi,Chicken Tikka Masala,9.95,https://s3-media1.fl.yelpcdn.com/bphoto/VeJRlSj6vSwDFNG7fQlrgQ/258s.jpg
+Sathi,paneer Tikka Masala,9.95,https://s3-media4.fl.yelpcdn.com/bphoto/fw8dw-Bz9tXE7UvFVwhoNg/258s.jpg
+Sathi,saag Paneer,9.95,https://s3-media2.fl.yelpcdn.com/bphoto/EbnFkTPiD28n7gBMFharpA/258s.jpg
+Sathi,chicken Samosa,8.85,https://s3-media4.fl.yelpcdn.com/bphoto/oOzEnT9nvCgnf66uENUYEw/258s.jpg
+Sathi,chicken Chaumin,11.25,https://s3-media2.fl.yelpcdn.com/bphoto/hPlVUQuWbIdRBFfNJjvdnQ/258s.jpg
+Sathi,chutneys,9.25,https://s3-media3.fl.yelpcdn.com/bphoto/X80iV0J9YtdTXJbeOkZFnw/258s.jpg
+Kura,piece Omakase,105,https://s3-media1.fl.yelpcdn.com/bphoto/HsB7s8JKKPQvQiFDEsf7YA/258s.jpg
+Kura,saushi Omakase,106,https://s3-media1.fl.yelpcdn.com/bphoto/a6qB_-TpthIA-zvruPunkg/258s.jpg
+Jolibee,Peach Mango Pie,4.5,https://s3-media3.fl.yelpcdn.com/bphoto/gP_EKZP9UZOsSuhM64VPwA/258s.jpg
+Jolibee,Halo-halo,4.25,https://s3-media3.fl.yelpcdn.com/bphoto/Tp7VhUJK5d9PXOfIBFoz4w/258s.jpg
+Jolibee,Jolly Spagatti,7.99,https://s3-media4.fl.yelpcdn.com/bphoto/yeJFOoiViJvlNg5iYGdJbQ/258s.jpg
+Maharlika,sizzling sisig,17,https://s3-media1.fl.yelpcdn.com/bphoto/t9zblUHAAIEtEnZHRdi1eQ/258s.jpg
+Maharlika,karekare,24,https://s3-media1.fl.yelpcdn.com/bphoto/d_OrwDUnEMrXue35Cynp0w/258s.jpg
+Maharlika,adobo,16,https://s3-media2.fl.yelpcdn.com/bphoto/Xj0C9GvEC9l9LdA4dHw8dA/258s.jpg
+Maharlika,lumpiang,8,https://s3-media2.fl.yelpcdn.com/bphoto/_XPTsPdCvg5BynZqfPgX5Q/258s.jpg
+Maharlika,Lechon Kawaii,13,https://s3-media1.fl.yelpcdn.com/bphoto/TJuAut-QqfD7Vs0M_o_7Wg/o.jpg
+Maharlika,Crispy Pata,24,https://s3-media4.fl.yelpcdn.com/bphoto/vFuaFVIi2_hxlv4Gpw6_gg/o.jpg
+Maharlika,chicken and waffle,22,https://s3-media3.fl.yelpcdn.com/bphoto/2tLIb_jg8QhClw0TKk1WVg/o.jpg
+Maharlika,singang,19,https://s3-media1.fl.yelpcdn.com/bphoto/8tlDzDyjbduus7Si8hepfw/o.jpg
+Narai,octopus,26,https://s3-media4.fl.yelpcdn.com/bphoto/r0SlR6nMdDcJ2zka0rqBcw/o.jpg
+Narai,Lamp chops,42,https://s3-media2.fl.yelpcdn.com/bphoto/JiHOrq_BTgz1w__lC7_lMg/o.jpg
+Narai,Tuna tartare,24,https://s3-media3.fl.yelpcdn.com/bphoto/NQHmAgxxo9zxRTRk_28AWQ/o.jpg
+Narai,scallops,38,https://s3-media4.fl.yelpcdn.com/bphoto/2Uu-39N7hoQ7D4NmT7J4ZA/o.jpg
+Narai,lavraki,30,https://s3-media4.fl.yelpcdn.com/bphoto/5Z-zTEtsGkjRRi6S-B4IwA/o.jpg
+Narai,Kataifi Eknek,14,https://s3-media1.fl.yelpcdn.com/bphoto/ZRX6Mez04Th5VAn1gd5yZA/o.jpg
+The Braised Shop,beef chank ,15,https://s3-media3.fl.yelpcdn.com/bphoto/cGrDfcfI3KiS6h2c-g6hqg/o.jpg
+The Braised Shop,thick glass noodle,9,https://s3-media2.fl.yelpcdn.com/bphoto/JxAxZ5zfMst6mpP_jD5UGg/258s.jpg
+The Braised Shop,beef tendon  ,9,https://s3-media3.fl.yelpcdn.com/bphoto/cGrDfcfI3KiS6h2c-g6hqg/258s.jpg
+The Braised Shop,dired tofu,8,https://s3-media2.fl.yelpcdn.com/bphoto/rQBbeBmnJz8TsF7hKvrhGg/258s.jpg
