@@ -74,7 +74,7 @@ function StartPage(props) {
     };
 
     return (
-        <Container component="main" maxWidth="xs">
+        <Container component="main" maxWidth="xs" className="hoverImg">
             <div className={classes.paper}>
                 <div className={classes.abc}>
                     <img className={classes.imgSpace} src={princessImage} alt="hello!" width={200} height={300}
